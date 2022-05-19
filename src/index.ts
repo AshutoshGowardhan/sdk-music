@@ -3,7 +3,10 @@ export class MusicLog {
   orange: string = "orange";
   blue: string = "blue";
   red: string = "red";
-  constructor() {}
+  constructor() {
+    this.prt = this.prt.bind(this);
+    this.injectYoutubeIframe = this.injectYoutubeIframe.bind(this);
+  }
 
   logOrange(msg: string) {
     console.log(`%c ${msg}`, `color : ${this.orange}`);
