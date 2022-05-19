@@ -19,7 +19,22 @@ export class MusicLog {
   }
 
   mutationObserver() {
-    const oberver = new MutationObserver(this.onMutation);
+    let self = this;
+    const oberver = new MutationObserver((mutations) => {
+      for (const { addedNodes } of mutations) {
+        for (const node of addedNodes) {
+          let nodeL = node as HTMLElement;
+          if (!nodeL.tagName) {
+            continue; // not an element
+          } else {
+            if (nodeL.classList.contains("superelement")) {
+              console.log(node, nodeL);
+              self.injectYoutubeIframe(nodeL);
+            }
+          }
+        }
+      }
+    });
     oberver.observe(document, {
       childList: true,
       subtree: true,
@@ -54,21 +69,21 @@ export class MusicLog {
     node.append(iframe);
   }
 
-  onMutation(mutations: MutationRecord[]) {
-    console.log(mutations);
+  // onMutation(mutations: MutationRecord[]) {
+  //   console.log(mutations);
 
-    for (const { addedNodes } of mutations) {
-      for (const node of addedNodes) {
-        let nodeL = node as HTMLElement;
-        if (!nodeL.tagName) {
-          continue; // not an element
-        } else {
-          if (nodeL.classList.contains("superelement")) {
-            console.log(node, nodeL);
-            this.injectYoutubeIframe(nodeL);
-          }
-        }
-      }
-    }
-  }
+  //   for (const { addedNodes } of mutations) {
+  //     for (const node of addedNodes) {
+  //       let nodeL = node as HTMLElement;
+  //       if (!nodeL.tagName) {
+  //         continue; // not an element
+  //       } else {
+  //         if (nodeL.classList.contains("superelement")) {
+  //           console.log(node, nodeL);
+  //           this.injectYoutubeIframe(nodeL);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
