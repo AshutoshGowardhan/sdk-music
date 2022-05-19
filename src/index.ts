@@ -65,8 +65,7 @@ export class MusicLog {
         } else {
           if (nodeL.classList.contains("superelement")) {
             console.log(node, nodeL);
-            // this.injectYoutubeIframe(nodeL);
-            this.prt();
+            this.injectYoutubeIframe(nodeL);
           }
         }
       }
