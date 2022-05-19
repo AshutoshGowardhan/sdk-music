@@ -5,13 +5,13 @@ export class MusicLog {
   constructor() {}
 
   logOrange(msg: string) {
-    console.log(msg, `color : ${this.orange}`);
+    console.log(`%c ${msg}`, `color : ${this.orange}`);
   }
   logBlue(msg: string) {
-    console.log(msg, `color : ${this.blue}`);
+    console.log(`%c ${msg}`, `color : ${this.blue}`);
   }
   logRed(msg: string) {
-    console.log(msg, `color : ${this.red}`);
+    console.log(`%c ${msg}`, `color : ${this.red}`);
   }
 
   mutationObserver(element: Node) {
