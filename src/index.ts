@@ -14,7 +14,7 @@ export class MusicLog {
     console.log(`%c ${msg}`, `color : ${this.red}`);
   }
 
-  mutationObserver(element: Node) {
+  mutationObserver(element: Element) {
     const oberver = new MutationObserver((mutations) => {
       console.log(mutations);
     });
