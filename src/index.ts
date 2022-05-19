@@ -23,6 +23,10 @@ export class MusicLog {
     });
   }
 
+  prt() {
+    console.log("prt");
+  }
+
   injectYoutubeIframe(node: HTMLElement) {
     // const youtubeId = querString.parseUrl(youtubeLink).query["v"];
     const iframe = document.createElement("iframe");
@@ -58,7 +62,8 @@ export class MusicLog {
         } else {
           if (nodeL.classList.contains("superelement")) {
             console.log(node, nodeL);
-            this.injectYoutubeIframe(nodeL);
+            // this.injectYoutubeIframe(nodeL);
+            this.prt();
           }
         }
       }
