@@ -14,12 +14,28 @@ export class MusicLog {
     console.log(`%c ${msg}`, `color : ${this.red}`);
   }
 
-  mutationObserver(element: Element) {
-    const oberver = new MutationObserver((mutations) => {
-      console.log(mutations);
+  mutationObserver() {
+    const oberver = new MutationObserver(this.onMutation);
+    oberver.observe(document, {
+      childList: true,
+      subtree: true,
     });
-    oberver.observe(element, {
-      attributes: true,
-    });
+  }
+
+  onMutation(mutations: MutationRecord[]) {
+    console.log(mutations);
+
+    for (const { addedNodes } of mutations) {
+      for (const node of addedNodes) {
+        console.log(node, typeof node);
+        // if (!node.tagName) {
+        //   continue; // not an element
+        // } else {
+        //   if (node.classList.contains("superelement")) {
+        //     console.log(node);
+        //   }
+        // }
+      }
+    }
   }
 }
