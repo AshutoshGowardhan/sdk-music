@@ -27,14 +27,14 @@ export class MusicLog {
 
     for (const { addedNodes } of mutations) {
       for (const node of addedNodes) {
-        console.log(node, typeof node);
-        // if (!node.tagName) {
-        //   continue; // not an element
-        // } else {
-        //   if (node.classList.contains("superelement")) {
-        //     console.log(node);
-        //   }
-        // }
+        let nodeL = node as HTMLElement;
+        if (!nodeL.tagName) {
+          continue; // not an element
+        } else {
+          if (nodeL.classList.contains("superelement")) {
+            console.log(node);
+          }
+        }
       }
     }
   }
