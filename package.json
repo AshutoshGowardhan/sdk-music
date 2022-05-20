@@ -1,6 +1,6 @@
 {
   "name": "sdk-music",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "test to learn sdk",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
