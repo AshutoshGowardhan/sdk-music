@@ -51,21 +51,8 @@ export class MusicLog {
     iframe.src = `https://www.youtube.com/embed/JYs_94znYy0`;
     iframe.width = "400";
     iframe.height = "100";
-    // iframe.frameBorder ="0";
-    // iframe.scrolling = "0";
     iframe.allow =
       "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-    // (
-    //   <iframe
-    //     width="560"
-    //     height="315"
-    //     src=`https://www.youtube.com/embed/${youtubeId}`
-    //     title="YouTube video player"
-    //     frameborder="0"
-    //     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    //     allowfullscreen
-    //   ></iframe>
-    // );
     node.append(iframe);
   }
 
